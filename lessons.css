@@ -1,0 +1,173 @@
+.lesson-world .world-heading { max-width: 90%; }
+#lessonViews {
+  position: absolute;
+  bottom: 79px;
+  left: 18px;
+  right: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+#lessonViews button { padding: 6px 9px; font-size: 12px; }
+.lesson-world button[aria-pressed="true"], .lesson-panel button[aria-pressed="true"] {
+  background: #3f6753;
+  color: white;
+}
+#lessonOverlay {
+  position: absolute;
+  top: 116px;
+  left: 26px;
+  max-width: calc(100% - 40px);
+  background: #fffdf0ec;
+  padding: 5px 10px;
+  border-radius: 9px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+#lessonOverlay strong, #lessonOverlay small { display: block; font-size: 11px; }
+#lessonOverlay small { color: #445d4f; }
+.lesson-map-mode #scene, .lesson-map-mode #hud, .lesson-map-mode .world-heading,
+.lesson-map-mode #worldLabel { visibility: hidden; }
+#lessonStage { position: absolute; inset: 0; overflow: auto; background: #ecf3ec; }
+.lesson-stage-inner { margin: auto; width: min(100%, 670px); padding: 15px 24px 21px; }
+.lesson-stage-inner > h2 { margin: 0 0 8px; }
+.lesson-map {
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 515px);
+  margin: auto;
+  border-radius: 17px;
+  background: #cfe9eb;
+  border: 1px solid #b1d1d0;
+}
+.lesson-map svg { position: absolute; width: 100%; height: 100%; }
+.map-land { fill: #b3c697; stroke: #63815f; stroke-width: 1.05; }
+.map-ridge { fill: none; stroke: #8e9b60; stroke-width: 5; stroke-linecap: round; opacity: .8; }
+.map-river { fill: none; stroke: #438eaa; stroke-width: 3; stroke-linejoin: round; }
+.compass-line { fill: none; stroke: #385a58; stroke-width: 1.4; }
+.compass-text { text-anchor: middle; fill: #314f4e; font-size: 10px; }
+.sea-name { fill: #356479; font-size: 13px; }
+.islands-line { stroke: #658382; stroke-width: 1.5; stroke-dasharray: 4 4; }
+.map-point, .map-pin {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.map-point {
+  width: 30px; height: 30px; padding: 0;
+  background: #fff8df; color: #254e3e; border: 2px solid #486f5e; border-radius: 50%;
+  box-shadow: 0 1px 4px #39594d55; font-size: 12px;
+}
+.map-point:hover { background: #f9d587; }
+.map-point:disabled { opacity: .85; }
+.map-pin b { display: block; width: 9px; height: 9px; border-radius: 50%; background: #466b54; }
+.map-pin.dokdo-pin b { background: #9a4c23; }
+.map-pin span {
+  position: absolute; left: 5px; bottom: 9px; font-size: 11px; font-weight: bold; white-space: nowrap;
+  background: #fff9ebec; border-radius: 4px; line-height: 1.5; padding: 0 3px;
+}
+.map-pin.dokdo-pin span { left: -2px; bottom: auto; top: 10px; }
+.map-zoom { margin: 0 0 9px; }
+.map-zoom button { padding: 5px 8px; }
+.map-caption, .map-sources { display: block; margin: 6px auto 0; max-width: 515px; font-size: 11px; color: #415e54; }
+.map-sources summary { cursor: pointer; }
+.lesson-panel h2 { margin: 12px 0; }
+.lesson-kicker { margin: 9px 0 0; font-size: 12px; font-weight: bold; color: #496b59; }
+.lesson-panel p { margin: 10px 0; }
+.lesson-panel .row { margin: 10px 0; }
+.lesson-panel .options button { font-size: 13px; }
+.lesson-panel .model-choice button { padding: 7px 9px; }
+.lesson-panel label { display: block; font-size: 13px; font-weight: bold; }
+.lesson-panel label input { margin: 0 3px 0 0; }
+.lesson-panel .primary { font-size: 13px; }
+.lesson-panel .field-hint { font-size: 12px; margin: 3px 0; color: #506459; }
+.lesson-panel textarea { min-height: 88px; width: 100%; resize: vertical; }
+.lesson-panel fieldset { border: 1px solid #cdd8c2; border-radius: 12px; padding: 8px; }
+.lesson-panel fieldset label { font-size: 12px; font-weight: normal; margin: 4px 0; }
+.lesson-panel legend, .activity-steps { font-size: 13px; }
+.activity-steps { padding-left: 23px; }
+.activity-steps li { padding-bottom: 6px; }
+.sentence-frame, .coast-criteria { background: #e9efdf; padding: 9px; border-radius: 9px; font-size: 13px; }
+.coast-criteria ul { padding-left: 18px; margin: 2px 0; }
+.coast-sheet { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 11px; }
+.coast-sheet th, .coast-sheet td { border: 1px solid #b9cbb7; padding: 5px; height: 34px; }
+.coast-sheet td { width: 37%; }
+.photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.photo-grid figure { margin: 0; }
+.photo-grid img { display: block; width: 100%; height: 185px; object-fit: contain; background: #dfece8; border-radius: 10px; }
+.photo-grid figcaption { font-size: 12px; }
+.reward-note { white-space: pre-wrap; }
+.view-question { padding: 10px 12px; border-left: 3px solid #69864c; background: #eaf0dc; border-radius: 0 8px 8px 0; }
+.coast-criteria textarea { min-height: 61px; }
+.coast-sheet textarea { margin: 0; min-height: 76px; padding: 4px; font-size: 12px; }
+.coast-photos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.coast-photos img { height: 145px; object-fit: cover; }
+.atlas-map { width: min(100%,680px); margin: auto; }
+.atlas-map svg { width: 100%; height: auto; display: block; overflow: hidden; border-radius: 12px; touch-action: none; cursor: grab; }
+.atlas-map svg:active { cursor: grabbing; }
+.atlas-tools { margin: 0 0 7px; gap: 5px; }
+.atlas-tools button { padding: 4px 7px; }
+.atlas-tools details { font-size: 12px; position: relative; }
+.atlas-tools summary { cursor: pointer; background: #fffaf0; border: 1px solid #d9e2d8; border-radius: 8px; padding: 3px 7px; }
+.atlas-layers { position: absolute; z-index: 3; background: #fffaf0; border: 1px solid #cbdccc; border-radius: 8px; width: 106px; padding: 5px; }
+.atlas-layers label { display: block; white-space: nowrap; }
+.atlas-layers input { width: auto; margin: 4px; }
+.atlas-land-fill { fill: #d9e3ae; stroke: none; }
+.atlas-shore { fill: none; stroke: #769ba1; stroke-width: .8; stroke-linejoin: round; pointer-events: none; }
+.atlas-range, .atlas-river, .atlas-arrow { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.atlas-range { stroke: #8d683f; opacity: .78; stroke-width: 2.4; stroke-dasharray: 5 3; }
+.atlas-river { stroke: #3289ab; stroke-width: 1.55; opacity: .94; }
+.atlas-arrow { pointer-events: none; stroke: #126586; opacity: .92; stroke-width: 2.4; }
+.atlas-marked-ridge { stroke: #9b4e20; stroke-width: 5; stroke-dasharray: none; }
+.atlas-marked-water { stroke: #006aa2; stroke-width: 4; }
+.atlas-paintable { cursor: pointer; }
+.atlas-paintable:hover { stroke-width: 5; }
+.atlas-dot circle { fill: #fffaf0; stroke: #416b51; stroke-width: 2; }
+.atlas-dot text, .atlas-feature text { fill: #293e35; font-size: 9px; font-weight: 700; stroke: #fffced; stroke-width: 2.55; paint-order: stroke; stroke-linejoin: round; }
+.atlas-number circle { fill: #fff7dc; }
+.atlas-number text { font-size: 11px; stroke: none; }
+.atlas-active { cursor: pointer; }
+.atlas-active:hover circle, .atlas-active:focus-visible circle { fill: #efca7c; stroke: #854c22; }
+.atlas-feature path { stroke: #727749; stroke-width: .65; }
+.atlas-feature circle { fill: #59653b; }
+.atlas-feature.feat-water text { fill: #175c7a; }
+.atlas-feature.feat-water circle { fill: #2a7fa0; }
+.atlas-feature.feat-plain text { fill: #4e652e; }
+.atlas-compass circle { fill: #f8faf0; opacity: .93; stroke: #8faea5; }
+.atlas-compass path { fill: none; stroke: #3e665d; stroke-width: 1.35; }
+.atlas-compass text { font-size: 7px; text-anchor: middle; fill: #284941; }
+.atlas-legend { display: flex; gap: 4px 9px; flex-wrap: wrap; align-items: center; margin: 7px 0; font-size: 10px; }
+.atlas-legend i { display: inline-block; width: 12px; height: 8px; border-radius: 2px; margin-right: 3px; }
+.legend-river { background: #3289ab; }
+.legend-ridge { background: #8d683f; }
+.compact-atlas { max-width: 380px; }
+.compact-atlas svg { pointer-events: none; }
+a { color: #245c49; }
+@media (max-width: 760px) {
+  #lessonOverlay { left: 15px; top: 101px; }
+  .lesson-stage-inner { padding: 12px; }
+  .lesson-stage-inner > h2 { font-size: 18px; }
+  .map-point { width: 26px; height: 26px; }
+  .photo-grid img { height: 130px; }
+  .coast-photos { grid-template-columns: 1fr; }
+  .atlas-legend { font-size: 9px; }
+}
+@page { size: A4 portrait; margin: 14mm; }
+@media screen { #lessonPrint { display: none; } }
+@media print {
+  body.print-lesson { background: white; color: #111; font-size: 11pt; }
+  body.print-lesson > :not(#lessonPrint) { display: none !important; }
+  #lessonPrint h1 { text-align: center; margin: 0 0 4mm; font-size: 22pt; }
+  #lessonPrint h2 { margin: 0 0 2mm; font-size: 13pt; }
+  #lessonPrint p { margin: 2mm 0; }
+  #lessonPrint section { break-inside: avoid; margin: 4mm 0; border: 1px solid #555; padding: 4mm; border-radius: 3mm; }
+  #lessonPrint .print-name { text-align: right; }
+  #lessonPrint .print-answer {
+    min-height: 23mm;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #aaa;
+    line-height: 6mm;
+  }
+  #lessonPrint ul { list-style: none; margin: 0; padding-left: 0; }
+}
